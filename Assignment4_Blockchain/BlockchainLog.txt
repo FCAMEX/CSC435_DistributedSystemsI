@@ -1,0 +1,350 @@
+// PROCESS TWO logs
+//Please note, some of the output may look a bit messy, but it was made with the intention to be as informative as possible
+//While I did all the Commands in Process 2 all other processes have the same capabilities
+
+C:\Users\fca_m\Documents\Distributed Systems 1\BlockChain>java Blockchain 2
+Starting Key Server using port: 4712
+Starting Unverified Block Server using port: 4822
+Starting Block Chain Server using port: 4932
+Received Public Key for Process: 2
+Process number: 2 Ports: 4712 4820
+
+First Block has been added to the BlockChain by Process: 2
+Process2: The input file has been read and the new unvalidated blocks have been multicasted
+Successfully acquired and queued unverified block with blockId:55241b51-3c73-4229-a9e0-850360d4da5c
+Successfully acquired and queued unverified block with blockId:d8390680-ea79-4338-bb52-c29fc5e8bc72
+Successfully acquired and queued unverified block with blockId:ca352f8b-f380-4357-b9b4-d2ba1f53a84b
+Successfully acquired and queued unverified block with blockId:4826e74a-d870-43bb-b62d-85f6e81e7591
+Verifying a block
+Block 55241b51-3c73-4229-a9e0-850360d4da5c has been verified and added to the BlockChain
+Multicasted the new BlockChain to all other processes
+Work is finished!
+Verifying a block
+Successfully retrieved and updated the Blockchain
+The BlockchainLedger.xml was succesfully updated
+Block ca352f8b-f380-4357-b9b4-d2ba1f53a84b has been verified and added to the BlockChain
+Multicasted the new BlockChain to all other processes
+Work is finished!
+Verifying a block
+Successfully retrieved and updated the Blockchain
+The BlockchainLedger.xml was succesfully updated
+Block 4826e74a-d870-43bb-b62d-85f6e81e7591 has been verified and added to the BlockChain
+Multicasted the new BlockChain to all other processes
+Work is finished!
+Verifying a block
+Successfully retrieved and updated the Blockchain
+The BlockchainLedger.xml was succesfully updated
+Block d8390680-ea79-4338-bb52-c29fc5e8bc72 has been verified and added to the BlockChain
+Multicasted the new BlockChain to all other processes
+Work is finished!
+Successfully retrieved and updated the Blockchain
+The BlockchainLedger.xml was succesfully updated
+Received Public Key for Process: 1
+Received Public Key for Process: 0
+
+Please select from the following commands:
+C - To show a report of the number of blocks verified by each process
+R [filename] - To process new records from a file
+V [subcommand]- To validate the entire blockchain. Add 'hash', 'signature', or 'treshold' as a subcommand to just target that test
+L - To list each Block in the Blockchain
+
+Successfully acquired and queued unverified block with blockId:3dc247d9-da17-4429-988a-53bf24c64eb3
+Verifying a block
+Successfully acquired and queued unverified block with blockId:acacf9a6-7670-401e-9726-1ccf62a01909
+Successfully acquired and queued unverified block with blockId:4549a7e0-736a-4cf3-bff3-5afafdb61819
+Block 3dc247d9-da17-4429-988a-53bf24c64eb3 has been verified and added to the BlockChain
+Multicasted the new BlockChain to all other processes
+Work is finished!
+Verifying a block
+Successfully retrieved and updated the Blockchain
+Successfully acquired and queued unverified block with blockId:46bdfccc-4258-4350-985b-0438022cbfbe
+The BlockchainLedger.xml was succesfully updated
+Successfully acquired and queued unverified block with blockId:c07ae9f3-478e-44fb-ae99-aed0f33b4cac
+Successfully acquired and queued unverified block with blockId:e68a9f62-a2ad-441f-9bb0-d11aa8e184e9
+Successfully acquired and queued unverified block with blockId:9cf54409-ebe0-44b8-8dbc-438fde8f7671
+Successfully acquired and queued unverified block with blockId:d35e53d7-ba92-4694-ad22-3c0f5677538f
+Block acacf9a6-7670-401e-9726-1ccf62a01909 has been verified and added to the BlockChain
+Multicasted the new BlockChain to all other processes
+Work is finished!
+Verifying a block
+Successfully retrieved and updated the Blockchain
+The BlockchainLedger.xml was succesfully updated
+Block 4549a7e0-736a-4cf3-bff3-5afafdb61819 has been verified and added to the BlockChain
+Multicasted the new BlockChain to all other processes
+Work is finished!
+Verifying a block
+Successfully retrieved and updated the Blockchain
+The BlockchainLedger.xml was succesfully updated
+Block d35e53d7-ba92-4694-ad22-3c0f5677538f has been verified and added to the BlockChain
+Multicasted the new BlockChain to all other processes
+Work is finished!
+Verifying a block
+Successfully retrieved and updated the Blockchain
+The BlockchainLedger.xml was succesfully updated
+Block 9cf54409-ebe0-44b8-8dbc-438fde8f7671 has been verified and added to the BlockChain
+Multicasted the new BlockChain to all other processes
+Work is finished!
+Verifying a block
+Successfully retrieved and updated the Blockchain
+The BlockchainLedger.xml was succesfully updated
+Block e68a9f62-a2ad-441f-9bb0-d11aa8e184e9 has been verified and added to the BlockChain
+Successfully retrieved and updated the Blockchain
+The BlockchainLedger.xml was succesfully updated
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+The BlockchainLedger.xml was succesfully updated
+The BlockchainLedger.xml was succesfully updated
+Multicasted the new BlockChain to all other processes
+Work is finished!
+The BlockchainLedger.xml was succesfully updated
+The BlockchainLedger.xml was succesfully updated
+Successfully retrieved and updated the Blockchain
+The BlockchainLedger.xml was succesfully updated
+
+
+Please select from the following commands:
+C - To show a report of the number of blocks verified by each process
+R [filename] - To process new records from a file
+V [subcommand]- To validate the entire blockchain. Add 'hash', 'signature', or 'treshold' as a subcommand to just target that test
+L - To list each Block in the Blockchain
+
+c
+Verification credit:
+Process 0 = 0
+Process 1 = 3
+Process 2 = 9
+
+Please select from the following commands:
+C - To show a report of the number of blocks verified by each process
+R [filename] - To process new records from a file
+V [subcommand]- To validate the entire blockchain. Add 'hash', 'signature', or 'treshold' as a subcommand to just target that test
+L - To list each Block in the Blockchain
+
+v
+Validating Block #: 2
+Determining if the Calculated Hash meets work threshold
+Comparing Block Hash with Calculated Hash
+Determining if the Block's SHA256 signature matches
+Veryfing the BlockID signature
+Block # 2 has been verified successfully!
+Validating Block #: 3
+Determining if the Calculated Hash meets work threshold
+Comparing Block Hash with Calculated Hash
+Determining if the Block's SHA256 signature matches
+Veryfing the BlockID signature
+Block # 3 has been verified successfully!
+Validating Block #: 4
+Determining if the Calculated Hash meets work threshold
+Comparing Block Hash with Calculated Hash
+Determining if the Block's SHA256 signature matches
+Veryfing the BlockID signature
+Block # 4 has been verified successfully!
+Validating Block #: 5
+Determining if the Calculated Hash meets work threshold
+Comparing Block Hash with Calculated Hash
+Determining if the Block's SHA256 signature matches
+Veryfing the BlockID signature
+Block # 5 has been verified successfully!
+Validating Block #: 6
+Determining if the Calculated Hash meets work threshold
+Comparing Block Hash with Calculated Hash
+Determining if the Block's SHA256 signature matches
+Veryfing the BlockID signature
+Block # 6 has been verified successfully!
+Validating Block #: 7
+Determining if the Calculated Hash meets work threshold
+Comparing Block Hash with Calculated Hash
+Determining if the Block's SHA256 signature matches
+Veryfing the BlockID signature
+Block # 7 has been verified successfully!
+Validating Block #: 8
+Determining if the Calculated Hash meets work threshold
+Comparing Block Hash with Calculated Hash
+Determining if the Block's SHA256 signature matches
+Veryfing the BlockID signature
+Block # 8 has been verified successfully!
+Validating Block #: 9
+Determining if the Calculated Hash meets work threshold
+Comparing Block Hash with Calculated Hash
+Determining if the Block's SHA256 signature matches
+Veryfing the BlockID signature
+Block # 9 has been verified successfully!
+Validating Block #: 10
+Determining if the Calculated Hash meets work threshold
+Comparing Block Hash with Calculated Hash
+Determining if the Block's SHA256 signature matches
+Veryfing the BlockID signature
+Block # 10 has been verified successfully!
+Validating Block #: 11
+Determining if the Calculated Hash meets work threshold
+Comparing Block Hash with Calculated Hash
+Determining if the Block's SHA256 signature matches
+Veryfing the BlockID signature
+Block # 11 has been verified successfully!
+Validating Block #: 12
+Determining if the Calculated Hash meets work threshold
+Comparing Block Hash with Calculated Hash
+Determining if the Block's SHA256 signature matches
+Veryfing the BlockID signature
+Block # 12 has been verified successfully!
+Validating Block #: 13
+Determining if the Calculated Hash meets work threshold
+Comparing Block Hash with Calculated Hash
+Determining if the Block's SHA256 signature matches
+Veryfing the BlockID signature
+Block # 13 has been verified successfully!
+All blocks have been verified successfully!
+
+Please select from the following commands:
+C - To show a report of the number of blocks verified by each process
+R [filename] - To process new records from a file
+V [subcommand]- To validate the entire blockchain. Add 'hash', 'signature', or 'treshold' as a subcommand to just target that test
+L - To list each Block in the Blockchain
+
+l
+13.  2019-05-30.06:57:09 Joe Blow 1996.03.07 123-45-6888 Smallpox BedRest Whiskey
+12.  2019-05-30.06:57:09 Bruce Lee 1940.11.27 456-789-123 SoreStomach LessCombat Vicodine
+11.  2019-05-30.06:57:09 John Smith 1996.03.07 123-45-6789 Chickenpox BedRest aspirin
+10.  2019-05-30.06:57:09 Julie Wilson 1996.03.07 123-45-6999 Insomnia Exercise HotPeppers
+9.  2019-05-30.06:57:09 Wayne Blaine 1942.07.07 123-45-6777 Measles WaitToGetBetter CodLiverOil
+8.  2019-05-30.06:57:09 Sally McCutty 1970.01.01 123-456-999 Migraine IcePack Almotriptan
+7.  2019-05-30.06:57:09 Wei Xu 1996.03.22 123-456-333 Shingles WaitForRelief Zovirax
+6.  2019-05-30.06:57:09 Rita Vita 1992.01.31 999-456-789 ObessivePersonality TryToRelax Ibuprofen
+5.  2019-05-30.06:57:03 Helen Keller 1880.06.27 666-45-6789 Arthritis WarmCloths Aspirin
+4.  2019-05-30.06:57:03 Abraham Lincoln 1809.02.12 444-45-6888 GreviousWound Surgery Whiskey
+3.  2019-05-30.06:57:03 John Kennedy 1917.05.29 333-45-6999 AddisonsDisease DrugTherapy Steroids
+2.  2019-05-30.06:57:03 Joe DiMaggio 1914.11.25 111-22-3333 SoreKnees RestFromSports Aspirin
+1.
+
+Please select from the following commands:
+C - To show a report of the number of blocks verified by each process
+R [filename] - To process new records from a file
+V [subcommand]- To validate the entire blockchain. Add 'hash', 'signature', or 'treshold' as a subcommand to just target that test
+L - To list each Block in the Blockchain
+
+r BlockInput2.txt
+Successfully acquired and queued unverified block with blockId:a5f7228a-34d1-43e5-bba5-28f354398126
+Verifying a block
+Successfully acquired and queued unverified block with blockId:74843633-ea8b-46c6-a4c7-67dcce87b8c5
+Successfully retrieved and updated the Blockchain
+Block is already in the BlockChain!
+Work is finished!
+Verifying a block
+The BlockchainLedger.xml was succesfully updated
+Successfully acquired and queued unverified block with blockId:777fb486-4bdb-4a30-b504-10cea3dd0400
+4 records have been added to the unverified blocks
+
+//PROCESS ONE logs
+
+C:\Users\fca_m\Documents\Distributed Systems 1\BlockChain>java Blockchain 1
+Starting Key Server using port: 4711
+Starting Unverified Block Server using port: 4821
+Starting Block Chain Server using port: 4931
+Received Public Key for Process: 2
+Successfully acquired and queued unverified block with blockId:4826e74a-d870-43bb-b62d-85f6e81e7591
+Successfully acquired and queued unverified block with blockId:d8390680-ea79-4338-bb52-c29fc5e8bc72
+Successfully acquired and queued unverified block with blockId:ca352f8b-f380-4357-b9b4-d2ba1f53a84b
+Successfully acquired and queued unverified block with blockId:55241b51-3c73-4229-a9e0-850360d4da5c
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Received Public Key for Process: 1
+Received Public Key for Process: 0
+Process number: 1 Ports: 4711 4820
+
+Successfully acquired and queued unverified block with blockId:3dc247d9-da17-4429-988a-53bf24c64eb3
+Successfully acquired and queued unverified block with blockId:acacf9a6-7670-401e-9726-1ccf62a01909
+Process1: The input file has been read and the new unvalidated blocks have been multicasted
+Successfully acquired and queued unverified block with blockId:46bdfccc-4258-4350-985b-0438022cbfbe
+Successfully acquired and queued unverified block with blockId:4549a7e0-736a-4cf3-bff3-5afafdb61819
+Successfully retrieved and updated the Blockchain
+Successfully acquired and queued unverified block with blockId:c07ae9f3-478e-44fb-ae99-aed0f33b4cac
+Successfully acquired and queued unverified block with blockId:e68a9f62-a2ad-441f-9bb0-d11aa8e184e9
+Successfully acquired and queued unverified block with blockId:9cf54409-ebe0-44b8-8dbc-438fde8f7671
+Successfully acquired and queued unverified block with blockId:d35e53d7-ba92-4694-ad22-3c0f5677538f
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Verifying a block
+Block c07ae9f3-478e-44fb-ae99-aed0f33b4cac has been verified and added to the BlockChain
+Successfully retrieved and updated the Blockchain
+Multicasted the new BlockChain to all other processes
+Work is finished!
+Verifying a block
+Block 46bdfccc-4258-4350-985b-0438022cbfbe has been verified and added to the BlockChain
+Multicasted the new BlockChain to all other processes
+Work is finished!
+Verifying a block
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Block e68a9f62-a2ad-441f-9bb0-d11aa8e184e9 has been verified and added to the BlockChain
+Multicasted the new BlockChain to all other processes
+Work is finished!
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+
+Please select from the following commands:
+C - To show a report of the number of blocks verified by each process
+R [filename] - To process new records from a file
+V [subcommand]- To validate the entire blockchain. Add 'hash', 'signature', or 'treshold' as a subcommand to just target that test
+L - To list each Block in the Blockchain
+
+//PROCESS ZERO logs
+
+C:\Users\fca_m\Documents\Distributed Systems 1\BlockChain>java Blockchain 0
+Starting Key Server using port: 4710
+Starting Unverified Block Server using port: 4820
+Starting Block Chain Server using port: 4930
+Received Public Key for Process: 2
+Successfully acquired and queued unverified block with blockId:d8390680-ea79-4338-bb52-c29fc5e8bc72
+Successfully acquired and queued unverified block with blockId:ca352f8b-f380-4357-b9b4-d2ba1f53a84b
+Successfully acquired and queued unverified block with blockId:55241b51-3c73-4229-a9e0-850360d4da5c
+Successfully acquired and queued unverified block with blockId:4826e74a-d870-43bb-b62d-85f6e81e7591
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Received Public Key for Process: 1
+Received Public Key for Process: 0
+Process number: 0 Ports: 4710 4820
+
+Successfully acquired and queued unverified block with blockId:3dc247d9-da17-4429-988a-53bf24c64eb3
+Successfully acquired and queued unverified block with blockId:acacf9a6-7670-401e-9726-1ccf62a01909
+Successfully acquired and queued unverified block with blockId:4549a7e0-736a-4cf3-bff3-5afafdb61819
+Successfully acquired and queued unverified block with blockId:46bdfccc-4258-4350-985b-0438022cbfbe
+Successfully retrieved and updated the Blockchain
+Successfully acquired and queued unverified block with blockId:c07ae9f3-478e-44fb-ae99-aed0f33b4cac
+Successfully acquired and queued unverified block with blockId:e68a9f62-a2ad-441f-9bb0-d11aa8e184e9
+Successfully acquired and queued unverified block with blockId:9cf54409-ebe0-44b8-8dbc-438fde8f7671
+Process0: The input file has been read and the new unvalidated blocks have been multicasted
+Successfully acquired and queued unverified block with blockId:d35e53d7-ba92-4694-ad22-3c0f5677538f
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Verifying a block
+Block 46bdfccc-4258-4350-985b-0438022cbfbe has been verified and added to the BlockChain
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+Multicasted the new BlockChain to all other processes
+Work is finished!
+Verifying a block
+Block e68a9f62-a2ad-441f-9bb0-d11aa8e184e9 has been verified and added to the BlockChain
+Successfully retrieved and updated the Blockchain
+Multicasted the new BlockChain to all other processes
+Work is finished!
+Successfully retrieved and updated the Blockchain
+Successfully retrieved and updated the Blockchain
+
+Please select from the following commands:
+C - To show a report of the number of blocks verified by each process
+R [filename] - To process new records from a file
+V [subcommand]- To validate the entire blockchain. Add 'hash', 'signature', or 'treshold' as a subcommand to just target that test
+L - To list each Block in the Blockchain
+
