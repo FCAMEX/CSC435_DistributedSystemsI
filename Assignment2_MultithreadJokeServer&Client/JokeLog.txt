@@ -1,0 +1,102 @@
+1)First client in Joke Mode
+
+Server one: localhost, port 4545
+Please enter your User Name:
+User1
+Please input a command, press Enter for a Joke/Proverb, s to toggle servers or type "quit" to exit.
+
+JC User1: Can a kangaroo jump higher than the Empire State Building?....Of course. The Empire State Building can't jump.
+
+JB User1: What did the duck say when he bought lipstick?....Put it on my bill.
+
+JD User1: Why couldn't the leopard play hide and seek?....Because he was always spotted.
+
+JA User1: What happens to a frog's car when it breaks down?....It gets toad away.
+JOKE CYCLE COMPLETED
+
+JD User1: Why couldn't the leopard play hide and seek?....Because he was always spotted.
+
+JA User1: What happens to a frog's car when it breaks down?....It gets toad away.
+
+JC User1: Can a kangaroo jump higher than the Empire State Building?....Of course. The Empire State Building can't jump.
+
+JB User1: What did the duck say when he bought lipstick?....Put it on my bill.
+JOKE CYCLE COMPLETED
+
+//Here we can see that all the responses are randomized every set of four and are not repeated until the cycle is completed.
+//These requests were interleived with 3 other clients without any issues
+//The responses are in completely different order between both cycles (JC,JB,JD,JA) vs (JD,JA,JC,JB)
+
+
+2)Second client in Proverb Mode
+
+Fernando Araujo's Joke Client.
+
+Server one: localhost, port 4545
+Please enter your User Name:
+User2
+Please input a command, press Enter for a Joke/Proverb, s to toggle servers or type "quit" to exit.
+
+JD User2: Why couldn't the leopard play hide and seek?....Because he was always spotted.
+
+JB User2: What did the duck say when he bought lipstick?....Put it on my bill.
+
+JC User2: Can a kangaroo jump higher than the Empire State Building?....Of course. The Empire State Building can't jump.
+
+PB User2: You can lead a horse to water, but you can't make him drink it.
+
+PD User2: The enemy of my enemy is my friend.
+
+PC User2: The squeaky wheel gets the grease.
+
+PA User2: Actions speak louder than words.
+PROVERB CYCLE COMPLETED
+
+PB User2: You can lead a horse to water, but you can't make him drink it.
+
+PA User2: Actions speak louder than words.
+
+PD User2: The enemy of my enemy is my friend.
+
+PC User2: The squeaky wheel gets the grease.
+PROVERB CYCLE COMPLETED
+
+//Here we can see that all the responses are randomized every set of four and are not repeated until the cycle is completed.
+//These requests were interleived with 3 other clients without any issues
+//The responses are in completely different order between both cycles (PB,PD,PC,PA) vs (PB,PA,PD,PC)
+
+
+3)Third client with switching between both Joke and Proverb Modes
+
+Fernando Araujo's Joke Client.
+
+Server one: localhost, port 4545
+Please enter your User Name:
+User3
+Please input a command, press Enter for a Joke/Proverb, s to toggle servers or type "quit" to exit.
+
+PB User3: You can lead a horse to water, but you can't make him drink it.
+
+PD User3: The enemy of my enemy is my friend.
+
+JD User3: Why couldn't the leopard play hide and seek?....Because he was always spotted.
+
+JB User3: What did the duck say when he bought lipstick?....Put it on my bill.
+
+PA User3: Actions speak louder than words.
+
+JC User3: Can a kangaroo jump higher than the Empire State Building?....Of course. The Empire State Building can't jump.
+
+PC User3: The squeaky wheel gets the grease.
+PROVERB CYCLE COMPLETED
+
+JA User3: What happens to a frog's car when it breaks down?....It gets toad away.
+JOKE CYCLE COMPLETED
+
+//Here we can see that both Jokes and Proverbs are randomized every set of four and are not repeated until the cycle is completed.
+//These requests were interleived with 3 other clients without any issues
+//The JokeClientAdmin server was used to flip back and forth between modes
+//The state was preserved and both Joke and Proverb cycles ended after 8 requests (4 requests of each type)
+//responses are in completely different order between both cycles (PB,PD,PA,PC) vs (JD,JB,JC,JA)
+
+

@@ -1,0 +1,761 @@
+
+<!-- saved from url=(0067)https://condor.depaul.edu/elliott/435/hw/programs/program-joke.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> <title> Distributed Systems -- Elliott  Multithreaded Joke Server and Client &lt;/center&gt; </title>
+</head>
+<body>
+<font face="Cambria" size="1">
+
+4.6 <br> <br> 
+
+Updates: 
+<ol>
+<li> 2020-01-20: Added a java sample of class variable communication between
+  methods, helpful for Admin Client.
+</li></ol>
+
+<font face="Cambria" size="4">
+<center> <h1>Program One <br>
+Multithreaded Joke Server and Client </h1> </center>
+
+<font face="Cambria" size="3">
+
+<h2> Overview: </h2>
+
+In this assignment you will build a pair of multi-threaded servers
+that accept input from multiple clients, and return appropriate output. In
+addition to the basic client-server model, you will also implement a
+secondary administration channel to your servers, and manually maintain
+the state of all conversations within your distributed application.<p>
+
+Each aspect of the specifications requires you to solve a particular
+client-server problem while maintaining a conversation within a <i>
+stateless </i> protocol. The assignment is designed to give you general-purpose
+exposure to writing code for a client-server environment, and working
+with threads, neither of which is trivial.</p><p>
+
+Your finished server is just for fun, but with minor changes it can serve
+as the basis for a real, viable, client-server application handling
+thousands of client conversations simultaneously.</p><p>
+
+Note that we will not make these servers thread-safe which is beyond
+the scope of this assignment.</p><p>
+
+<strong> InetServer:</strong></p><p><strong>  </strong>
+
+</p><ul>
+
+<li> <a href="http://condor.depaul.edu/~elliott/shared/java/GetJava.html">
+Install Java 1.8 </a> if you need to. We will be running your
+programs under Java 1.8.<p>
+
+</p></li><li> You will need several command windows (shells), each running a
+separate process to run your client/server programs. Command windows
+are available under Windows by using [Start | run | cmd]. Use [Start]
+within the original command shell to start other windows. Under Unix
+(and Apple OSX which runs on top of Unix) use command shells [Terminal
+Windows] of your choosing.<p>
+
+</p></li><li> Refer to the <a href="https://condor.depaul.edu/elliott/435/hw/programs/inet/InetPDF-D.pdf"> InetServer PDF </a>
+document, and the lecture, for large hints on how to get this program
+working. The expectation is that you will TYPE IN THE CODE YOURSELF,
+and GET IT RUNNING. In my experience, the 30-40 minutes to type in the
+programs yourself, fix the bugs you have introduced, and figure out
+how they run, will be paid back many times over.<p>
+
+</p></li><li> Remove ALL of my comments from InetServer.java and
+InetClient.java. Add extensive comments of your own demonstrating that
+you know how the server works. This is a required part of this pedagogical
+assignment, demonstrating that you understand the code.<p>
+
+</p></li><li> Some sample Java Inet <a href="https://condor.depaul.edu/elliott/435/hw/programs/inet/"> .class files </a> and source
+code are available to help you get started. (These work fine under
+Java 1.8). Run the client/server program as follows: Download ALL the
+.class files into a directory. Issue [&gt; Java InetServer] in one of the
+windows, and [&gt; Java InetClient] in a separate window for each client
+that you will be running simultaneously.<p>
+
+
+</p></li><li> Running the InetServer: In one command window issue: [&gt; java
+InetServer]. In <i> another </i> command window issue: [&gt; java
+InetClient] Then follow the prompts on the client to look up the IP
+addresses of domain-named computers. Optionally, you can run the
+program on two different machines, exactly the same way, but by
+starting the client with the name or IP address of the server machine
+as the first argument to the InetClient program.<p>
+
+</p></li><li> You may have to speak to your firewall about allowing the client/server
+TCP/IP connections, depending on how it is configured.<p>
+
+</p></li><li> Note: The application code in the server—looking up the IP
+addresses corresponding to domain names—is not particularly
+interesting to us and was just some fun network code using existing
+libraries. The client and server portion of the assignment is what we
+care about. The assignment would be almost as interesting if we simply
+sent two numbers from the client to the server and had the server add
+them together.<p>
+
+</p></li><li> Submission files for Inet:<p>
+
+</p><ul>
+<li> InetServer.java
+</li><li> InetClient.java. 
+</li></ul>
+<br>
+
+Zip these two java source files together and submit to the InetServer D2L
+link. <p>
+
+</p></li><li> [Optional test of plagiarism checkers:]
+<ul>
+<li> Concatenate your two Inet files together and submit your <i>
+InetAll </i> file to the InetTII link as .docx, or .html NO ZIP FILES HERE.<p>
+
+</p></li><li> Run the plagiarism checker against your InetTII link by clicking
+on the D2L number representing the number of InetTII submissions you
+have made, and following the links. In this case only, your code will
+likely appears as being flagged for plagiarism (because all of the
+code is the same as other submissions), but none of your comments should
+be flagged for plagiarism.<p> 
+</p></li></ul>
+</li></ul>
+
+<h2> Administration: </h2>
+
+<ul>
+
+<li> Get the InetServer program fully working. Use this as a basis for
+your JokeServer.<p>
+
+</p></li><li> Download the <a href="https://condor.depaul.edu/elliott/435/hw/programs/checklist-joke.html"> checklist </a> for this
+programming assignment. Place it with the files you submit to D2L as
+<i> checklist-joke.html.</i> Update it as you make progress by changing <i>
+no </i> to <i> yes </i> each time you complete one of the checklist
+items. <i> Never </i> change a <i> no </i> to a <i> yes </i> unless
+the work has been done. Saying <i> yes </i> you have completed a
+feature of the assignment when you have not done so will be taken as
+an attempt to cheat your peers, resulting in outright failure. In
+extreme cases you can put <i> maybe </i> and give an explanation in
+the comments section below. <p>
+
+</p></li><li> There is a high priority on our being able to download, and run,
+your three java applications (JokeServer, JokeClient, JokeClientAdmin)
+without any complications. So, even though this may not be the most
+elegant coding style, put all your source files in <strong> one
+directory,</strong> along with your checklist, the JokeLog, and so on,
+and zip together before submitting to D2L. Make sure that your
+programs will compile when we issue "javac *.java" at the command line
+prompt from within this single directory. NEVER use java packages. That is,
+the <i> package </i> statement should not appear in your sourec code.<p>
+
+</p></li><li> Submission files for JokeServer:<pre>JokeServer.java
+JokeClient.java
+JokeClientAdmin.java
+JokeLog.txt
+checklist-joke.html.
+</pre>
+
+The filenames MUST be precise; we use automated scripts as part of the
+grading process. Zip all these files together and submit the one .zip
+file to the JokeServer D2L dropbox.<p>
+
+</p></li><li> Concatenate all your JokeServer files, but NO INET FILES, into
+one plain text file (.docx, or .html, but NO ZIP FILES) for
+submission to the second JokeServerTII D2L Dropbox link for plagiarism
+checking. I have provided one of the plagiarism checkers I use as a
+link from D2L. CHECK YOUR SUBMISSION to see if it will be flagged for
+plagirism. [In D2L, click on the number link showing the number of
+submissions you've made and follow this path to retrieve your
+plagiarism report.] There may be some minor overlap with the work of others,
+but the overall percentage should be low, and your comments should
+always be unique.<p>
+
+Your concatenated files will not be used for compilation and you need
+not be concerned about formatting, but the TEXT MUST BE THE SAME as
+the JokeServer files you have submitted for grading, and the single
+TII file must be readable by the plagiarism checker.</p><p>
+
+</p></li><li> Be sure to include the <a href="https://condor.depaul.edu/elliott/435/RequiredHeaderA.html"> required java
+comments header </a> in each of your java files.<p>
+
+</p></li><li> Make sure that you are familiar with the assignment submission rules.
+Programs that do not precisely conform to the rules will not be
+graded. Please do not ask for an exception to this policy. Strict file
+names apply, and are used as input to various grading scripts and
+plagiarism checkers. <p>
+
+</p></li><li> Allow yourself enough time to get a basic version of the
+JokeServer running. Debugging TCP/IP on your machine, having difficulties
+wtih your firewall, spawning runaway processes, etc. comes
+with the territory, and you should not underestimate the amount of
+time this will take you during the initial phases of this project.<p>
+
+</p></li><li> You will have to figure out a way to capture the output from your
+running programs so that the output, showing your working programs,
+can be placed in your JokeLog.txt file, and this might take some time.<p>
+
+</p></li><li> Note that you have to maintain a theoretically unlimited number of
+arrays, or other data structures, to keep track of client state; you
+have to connect from two different kinds of clients, and so on. Each
+of these steps may take some thought, so leave plenty of time to get
+this assignment finsihed.. <p>
+
+</p></li><li> Allow yourself enough time to format the presentation of your
+work <i> exactly </i> as specified. This may take some thought and
+some experimentation the first time you do this. That is, you may have
+to install and learn an editor for creating text files, etc. You
+should NOT assume that you can get this done at the last minute.<p>
+
+</p></li><li> I <i> strongly </i> recommend that you complete this assignment
+incrementally, and each time you get a partial version running,
+you submit it to D2L (with the appropriate checklist!). This way, if
+you run out of time you will still get substantial partial credit. If
+you submit a partial version (with the matching checklist!) you should
+put a console message for the grader when the program starts up, and a
+note in the comments section of your checklist that this is a partial
+version of the assignment and you plan to resubmit later.<p>
+</p></li></ul> 
+
+<hr>
+
+<h2> Suggested Development Order </h2>
+
+<ul> <li> You can develop as you wish, but following is the partial,
+incremental development order I recommend. After each step, clean up
+the interface code as necessary to meet the console input and output
+specifications. Update your checklist as you complete steps. Comment
+your code <i> during development </i>.<p>
+
+</p></li><li> Remove the Inet application code; return a single joke from the
+server as soon as the client connects.<p>
+
+</p></li><li> Connect from the admin client and automatically toggle the server
+mode between joke and proverb on each connection. Display on the
+server console what the mode is each time you toggle.<p>
+
+</p></li><li> Return either a single joke or a single proverb to the client
+depending on the server mode.<p>
+
+</p></li><li> Start writing server console output about what has
+occurred. Determine how you are going to capture the server and client
+console logs so you will be able to capture this output, concatenated
+it into JokeLog.txtt and turn it in when your program is done.<p>
+
+</p></li><li> Return four jokes in order: JA, JB, JC, JD, then repeat over and
+over, and do the same for proverbs PA, PB, PC, PD, etc.<p>
+
+</p></li><li> At the end of each joke cycle and proverb cycle, announce on the
+console "JOKE CYCLE COMPLETED" or "PROVERB CYCLE COMPLETED." <p>
+
+</p></li><li> Connect from multiple clients and verify that the previous step
+works for <i> each client, independently </i> without interference
+from other clients.<p>
+
+</p></li><li> Return interleaved jokes and proverbs, depending on server mode
+at the time of any given request, without losing track of where you
+are in the JA,JB,JC,JD cycle of jokes, and the PA,PB,PC,PD cycle of
+proverbs for one client, verifying that there is no intereference in
+the two respective cycle orders for each of jokes and proverbs.<p>
+
+</p></li><li> Return interleaved jokes and proverbs without losing track of
+where you are in the JA,JB,JC,JD cycle of jokes, and the PA,PB,PC,PD cycle of
+proverbs for multiple clients, verifying that there is no
+interference from switching server mode from joke to proverb, and no
+interference between any one of your multiple clients and another. <p>
+
+</p></li><li> Parse the user name in the JokeClient <i> before </i> entering
+the request loop. Insert the user's name right after the "JA", "JB",
+"PA", "PB", etc. designation, and before the joke or proverb. For
+novice programmers this string processing can be hard. Do this toward
+the end. It is not a particularly critical part of the
+assignment. Until code tips and questions on string manipulation in
+java at the class forums is encouraged. <p>
+
+</p></li><li> Re-randomize the jokes, and proverbs for each client conversation
+at the start of each four-item joke and proverb cycle. Veryify that
+the randomization of jokes and proverbs for one client conversation
+does not interfere with any other client conversation. Do this toward
+the end. It is confusing, and not a particularly critical part of the
+assignment.<p>
+
+</p></li><li> Go through your entire program to verify that ALL specifications
+are met regarding file naming, comments, program logic, console input,
+and output.<p>
+
+</p></li><li> Make sure your JokeClient and JokeClientAdmin programs will
+accept a first argument with a different domain name or IP
+address. Run your clients and server on different machines if it is
+practical for you to do so. Take some care that your firewall does not
+interfere with you running your programs across the network. [To find
+the IP address of your machine under Windows, type "ipconfig" at a
+command prompt; use "ifconfig" under unix.] <p>
+
+If you are not clear on how to change the server mode in one method (and
+thread) and read it in another you can refer to
+this <a href="https://condor.depaul.edu/elliott/435/hw/programs/SimpleCommunication.java"> Simple Communication Java Program</a>.</p><p>
+
+</p></li><li> Once your default JokeServer is fully working, proceed with the
+following steps. Make SURE that when no arguments are passed to your
+client java programs they run at the default locations, as given in the
+specifications. <p>
+
+</p></li><li> Change your JokeServer to accept an argument indicating that the
+JokeServer should run at the secondary server port number, rather than
+at the default server port number. The intent is that this will only
+happen after the first, default, JokeServer is already running at the
+default port.<p>
+
+</p></li><li> Modify your JokeClient and JokeClientAdmin programs so that when they
+are given two arguments, the first argument will point to the domain name or
+IP address of the server, and the second argument, if present will be used
+as IP address of a second server.<p>
+
+</p></li></ul>
+
+
+
+
+<h2> Multi-threaded Joke and Proverb Server: </h2>
+
+<h3> JokeServer Conventions </h3>
+
+<ul>
+
+<li> Use "localhost" or "127.0.0.1" as the default IP address/domain
+name location for your JokeServer. Use 4545 as the default port for
+your JokeServer, and 4546 for the secondary port.<p>
+
+</p></li><li> If your server or client has odd behavior, print a note about
+this on the console at startup. <p>
+
+</p></li><li> Use strictly clean jokes and proverbs please. Be respectful to
+the grader and your professor.<p>
+
+</p></li><li> Use the following conventions for command-line arguments to your
+JokeServer, JokeClient, and JokeClientAdmin programs. Note that many
+of you many not complete the final step of JokeServer in which case
+you will not have a secondary server, and will not need to deal with
+any command-line argumnets for the secondary server.<p>
+
+</p><ol>
+
+<li> <pre> &gt; java JokeServer [secondary]<br> </pre>
+
+Runs at port 4545 by default, and port 4546 if "secondary" is
+indicated (no square braces typed!).
+
+</li><li> <pre> &gt; java JokeClient &lt;IPaddr&gt; &lt;IPaddr&gt; 
+</pre>
+
+If a first argument is present, the client will connect to the server
+at that IP address or domain name, otherwise it will use the default
+of "localhost" or "127.0.0.1"<p>
+
+If the second IP address or domain is indicated the client allows the user
+to switch between primary and secondary servers, possibly at different IP
+addresses. </p><p>
+
+</p><pre> &gt; java JokeClient localhost localhost
+</pre>
+
+...would connect to the local host (127.0.0.1) at ports 4545 for the primary
+server, and 4546 for the secondary server.<p>
+
+</p><pre> &gt; java JokeClient localhost 140.192.1.9
+</pre>
+
+...would connect to port 4545 on the local host (127.0.0.1) for
+the primary server, and port 4546 on 140.192.1.9 for the secondary server.<p>
+
+
+</p></li><li> <pre> Java JokeClientAdmin &lt;IPaddr&gt; &lt;IPaddr&gt;  </pre>
+
+If a first argument is present, the client will connect to the server at
+that IP address or domain name, at port 5050, otherwise it will use the
+default of "localhost" (127.0.0.1) at port 5050. <p>
+
+If the second IP address or domain is indicated the client allows the user
+to switch between primary and secondary servers, possibly at different IP
+addresses. The administration port for the secondary server is 5051. </p><p>
+
+</p></li></ol>
+
+</li><li> It is required that your JokeServer[s], JokeClientAdmin, and
+JokeClient[s] can be started in any order.<p>
+
+</p></li><li> The JokeServer starts in Joke Mode by default. The JokeServer and
+JokeClient[s] will run without the JokeClientAmin being started.<p>
+
+</p></li><li> If a client process is stopped, then we will assume that that
+client conversation is permanently lost. If the server process is stopped,
+then we will assume that ALL client conversations are permanently
+lost.<p>
+
+</p></li><li> The JokeClientAdmin can be started and stopped at will without
+otherwise affecting the client[s] and server[s].<p>
+
+</p></li><li> All communications from the secondary server are preceeded by the
+four characters "&lt;S2&gt;"<p>
+
+</p></li><li> Use the following JokeClient and JokeClientAdmin conventions:<p>
+
+</p><ol> 
+
+<li> At startup, print the IP address and port number of the server
+being used on the client console. If you are using a secondary server,
+then print both IP addresses and ports being used: <pre>Server one: localhost, port 4545
+Server two: some.other.ip.net, port 4546
+</pre> 
+
+</li><li> When using a secondary server, input of "s" means toggle from one
+server to the other: switch from primary to secondary, or secondary to
+primary. Print the IP address and port number of the current server
+whenever a toggle has occurred. When not using a secondary server
+input of "s" means print the message "No secondary server being used"
+on the console.<pre>Now communicating with: localhost, port 4545
+</pre>
+
+</li><li> Use "quit" to exit from the client.<p>
+
+</p></li></ol>
+
+</li><li> For the JokeClient use the following additional conventions:<p>
+
+</p><ol>
+
+<li> Get the user's name before entering the server query loop.<p>
+
+</p></li><li> &lt;Enter&gt; means connect to the current server and request a
+response. If you are having difficulty with empty console input, then allows
+us to enter any string other than "quit" to get a response, including a
+single character such as "x". But you MUST tell us this is what you are
+looking for.<p>
+
+</p></li></ol>
+
+</li><li> For the JokeClientAdmin use the following additional conventions: <p>
+
+</p><ol>
+
+<li> The JokeClientAdmin connects to the primary JokeServer by default
+whenever it is started.<p>
+
+</p></li><li> &lt;Enter&gt; means connect to the server and tell it to toggle between
+JokeServer modes: Joke Mode switches to Proverb mode, and Proverb Mode
+switches to Joke mode. Print the current mode on the console. <p>
+
+</p></li><li> The JokeClientAdmin connects to both the primary server at port 5050
+and the secondary server at port 5051.<p>
+
+</p></li></ol>
+
+</li><li> Jokes have the following format:<pre> JA &lt;username&gt;: &lt;joke body&gt;
+</pre>
+...where "JA" can be either JA, JB, JC, or JD. Similarly, proverbs have
+the same format, except with PA, PB, PC, PD. <p>
+
+</p></li><li> Comments are an important part of your grade. Comment your
+<i> pedagogical </i> code as you develop. Never plagiarize your comments!<p>
+
+</p></li><li> You will need to run the JokeServer, JokeClient, and
+JokeAdminClient in different command windows as you did with the
+InetServer.<p>
+
+</p></li></ul>
+
+<h3> JokeServer Development </h3>
+
+<ul>
+
+<li> Start with your InetServer and InetClient programs. Rename them
+to JokeServer.java and JokeClient.java. Remove the Internet
+lookup application code from your client and server, but leave in the
+basic client and server loops, and connection architecture.<p>
+
+</p></li><li> Modify your JokeClient so that it asks for the user's name [used
+later] then enters a loop.
+
+</li><li> Inside of the loop, when the user presses &lt;enter&gt; this signals a
+connection to the server. When your JokeClient connects to your
+JokeServer this implements a request to the server to respond with a
+joke or a proverb, depending on the server's current mode.<p>
+
+</p></li><li> For each conversation with a client, complete sets of four jokes,
+[JA, JB, JC, JD] and, independently, four proverbs [PA, PB, PC, PD]
+are returned to the client one at a time. When all of the jokes or
+proverbs in each set have been returned, then start over at the
+beginning of the set.  Multiple clients [theoretcially, many thousands
+of clients] run simultaneously, and each client conversation is
+completely independent of all other client conversations.<p>
+
+</p></li><li> Your JokeClientAdmin connects to the server and sets it in <i>
+Joke Mode </i> [the default], or <i> Proverb Mode </i> for ALL
+subsequent client connections within the respective conversations.<p>
+
+</p></li><li> Modify the client so it accepts the name of the user (one time!)
+before entering the request loop. The server accepts the name as input
+from the JokeClient, and thereafter inserts the name appropriately
+into the body of all jokes and proverbs returned as part of the
+conversation with that client. On the client, the user need only press
+<i> enter </i> to make repeated requests of the server. <p>
+
+</p></li><li> Once your jokes and proverbs are being returned correctly, without
+interference between client conversations, then at the beginning of
+each joke or proverb cycle, randomize the jokes or proverbs before
+starting the cycle again. However, the rule still stands that no joke
+or proverb can be repeated as part of a client conversation until ALL
+the jokes or proverbs have been seen by the client, at which point the
+cyle (and randomization) is started all over again.<p>
+
+This radomizing is a small part of the assignment, but think about how
+this might be done. Did you implement randomness efficiently? Does
+your solution scale up for 1,000 jokes?  1,000,000 jokes? Why might a
+set implementation, possibly with a linked data structure, be useful
+here, rather than randome access to an array? Note: efficiency in your
+implementation is desirable, but will not affect your JokeServer
+grade. Comments in your code? </p><p>
+
+</p></li><li> Build a template of exactly four jokes proverbs and four proverbs
+for use on your server. Put "JA " at the beginning of the first joke,
+"JB " at the beginning of the second, "PC " at the beginning of the
+third proverb, and so on to help with debugging, and grading [this is
+required].
+
+</li><li> Each time a client connects, select the next joke or proverb to
+be sent as part of that conversation, and then insert the user's name
+into the joke or proverb <i> after </i> the "JA " indication, and <i>
+before </i> the body of the joke.
+
+Asssuming the user's name is Joseph, you might start with the template
+for our first joke:<pre>JA &lt;name-holder&gt;: Why did the chicken cross the road? To get to the other side!</pre>
+
+The server modifies the template for this client to produce:<pre>JA Joseph: why did the chicken cross the road? To get to the other side!
+</pre>
+
+</li><li> Proverbs are the same:<pre>PD Joseph: The early bird gets the worm.
+</pre>
+
+</li><li> Modify the server to accept a connection at port 5050 from an
+administration client (and, later at 5051 for the secondary server). This
+will take some thought because you will have to make an asynchronous call,
+using a separate thread, to start a second server listener waiting for
+administration client connections. See the file <a href="https://condor.depaul.edu/elliott/435/hw/programs/joke/joke-threads.html"> joke-threads.html </a> for some hints, and
+the file <a href="https://condor.depaul.edu/elliott/435/hw/programs/joke/joke-pseudo.html"> joke-pseudo.html </a> for pseudo
+code.<p>
+
+</p></li><li> Write a second client, JokeClientAdmin that connects at the
+administration port and toggles the server between Joke Mode and
+Proverb Mode.<p>
+
+</p></li></ul>
+
+<h3> State Maintenance: </h3>
+
+<ul>
+
+<li> How you maintain the state of client conversations is up to you,
+as long as you always break the connection after each joke, or proverb
+is returned. But this will require some though before you begin to
+write code. I recommend that you write out your design with pencil and
+paper before beginning to write computer code. <p>
+
+</p><p></p></li><li> You have many ways that you can implement state maintenance. For
+example:<p>
+
+</p><ol>
+
+<li> MINIMAL COOKIE ON THE CLIENT; FULL STATE ON THE SERVER: You can
+maintain state by sending a unique "cookie" (e.g., a UUID would be one
+way to implement this, or a large random number unlikely to have a
+collision) from the client when it first connects. Pass the "cookie"
+from the client each time it connects, and use it on the server to
+look up the state of the unique client conversation which has been
+stored there. Use this mechanism to guarantee that the client never
+gets a joke, or proverb, repeated until ALL of the jokes and proverbs
+in each respective four-item cycle have been sent. Then, cycle through
+all the jokes or proverbs again, after re-randomizing. See the file <a href="https://condor.depaul.edu/elliott/435/hw/programs/joke/joke-state.html"> joke-state.html </a> for some pointers
+on maintaining the state of the client. <p>
+
+</p></li><li> FULL STATE ON THE CLIENT; NOTHING ON THE SERVER: You can send the
+entire state back to the client after updating by the server, and
+maintain nothing at the server side. That is, read and update the
+jokes-sent/proverbs-sent "checklist" (sent by the client) at the
+server with the new joke or proverb marked as having been sent, and
+then send the whole joke/proverb checklist back to the client. Each
+time the client connects, it sends the entire state (contained in the
+checklist, plus the user name) again.  <p>
+
+</p></li><li> MAINTAIN PART OF THE STATE AT EACH END: You can implement
+anything in between the above two schemes, such as keeping the cookie
+and the joke-state on the client, and the proverb-state on the
+server; the cookie and the user name on the client, but the rest of
+the state on the server; etc. <p>
+
+</p></li><li> NOTHING ON THE CLIENT: It is not possible to implement the JokeServer
+this way. Why not? <p>
+
+</p></li><li> MUST CONNECT TO SERVER: Even if you maintain the entire state of
+the client conversation on the JokeClient, and update it there, you
+cannot determine joke-mode or proverb-mode without connecting to the
+server. You can, however, download your four jokes and four
+proverbs when you first connect, then just ask the server what mode it
+is in each time you re-connect. When the jokes or proverbs are
+exhausted, you can reconnect to get them randomized and downloaded
+again, or just randomize them on the client, depending on your design
+and how often you envision the jokes and proverbs being updated. <p>
+
+Note that this allows for some network efficiency (less data going
+back and forth) and can off-load the randomizing of the jokes and
+proverbs, but it does mean that you have lots of duplicate data
+scattered around the web. Suppose that your legal department sends a
+memo that one of your jokes is now considered libelous? With this
+design, you are out of luck.</p><p>
+
+</p></li><li> COOKIE VARIATION: Optionally you could initially send an empty
+cookie/state structure from the client at startup time, and have the server
+assign a value when it notices that the cookie or state structure has not
+been initialized. This allows the use of a simple counter maintained by the
+server to identify conversations of various clients. Thereafter, the
+client just sends the number assigned as the cookie. <p>
+
+</p></li></ol>
+
+</li><li> Maintain state for each client such that if the server is, e.g.,
+switched from Joke Mode to Proverb Mode, and then some time later back again
+to Joke Mode, the constraint that no joke is repeated until all four have
+been randomly returned is maintained across these transitions among server
+states. (Similarly, this constraint also holds for proverbs.)<p>
+
+</p></li><li> ALL client conversations are entirely indpendent, except that the
+corpus of joke templates and proverb templates is the same, and all
+client coversations use the current server mode to determine whether a
+joke or proverb is to be returned to the client.<p>
+
+
+</p></li><li> QUESTIONS: For a large-scale production system, when is it
+appropriate to send just a cookie back to the client? When should the
+whole state be sent to the client? Suppose that in place of jokes you
+were sending 4 GByte database entries? Suppose that instead of a
+static joke, you were computing, in real time, some highly
+cpu-intensive output based on input data assessed at the server at the
+time of the request? Which design would you use for each? How would
+your solution scale?
+
+</li></ul>
+
+<h3> Extending to two servers, primary and secondary: </h3>
+
+<ul>
+
+<li> Once you have completed the above, continue as follows. This
+portion of the JokeServer assignment is only worth ten percent, so it
+is not that big of a deal if you don't complete it.<p>
+
+</p></li><li> All of the above functionality remains the same. If no arguments
+are passed to the server, or the clients, everything MUST continue to
+work exactly as above, which is the default mode of operation. <p>
+
+</p></li><li> Your secondary server, using exactly the same code, will run in its own
+process in a separate command shell but communicating via different ports.<p>
+
+</p></li><li> Modify your JokeServer to accept an argument, the token
+"secondary":<pre> 
+&gt; java JokeServer secondary
+</pre>
+
+When your JokeServer code detects this argument, it starts the server
+listening for JokeClient connections at port 4546. (See
+ArgsSample.java for tips on accepting arguments in Java.) Print on the
+console that this is the secondary server. JokeClientAdmin connections are
+at port 5050 for the primary admin server, and 5051 on the secondary admin server.<p>
+
+</p></li><li> All communications from the secondary server to the JokeClient
+are preceded by the four characters:<pre>&lt;S2&gt;
+</pre>
+
+So, for example, a proverb would look like this:<pre>&lt;S2&gt; PD Joseph: The early bird gets the worm.
+</pre>
+
+</li><li> The two servers are completely independent from one another, and all
+client conversations between a server and a client are independent of
+conversations between that client and the other server. <p>
+
+</p></li><li> Hint: If you store the entire state of the conversation on the server
+  and pass a "reminder token" (cookie) to the server to go find your state
+  when you connect, you only have to pass the same token to the second
+  server, and everything else is done. If you store the entire state on the
+  client, you only have to keep two track of two conversation states on your client, and
+  send the right one to the right server when you connect. Other mechnisms
+  will be about as easy, so (don't tell! but...) it is not that hard to add
+  the second server.
+
+</li></ul>
+
+<h3> Execution: </h3>
+<ul>
+<li> Run your sever with multiple clients active at the same time. Interleave
+requests from different clients. Capture eight output responses from one
+client in joke mode, and eight in proverb mode, showing that the jokes and
+proverbs are returned randomly, but not repeated until all four in
+each set have been sent back. Annotate this in your output log. <p>
+
+</p></li><li> Repeat the process, but this time use your adminstration client to
+interleave Joke Mode and Proverb Mode, showing that state is correctly
+maintained across changes between modes.<p>
+
+</p></li><li> Put the output from your running sessions in a text log file and
+ANNOTATE the output—highlighting the randomness of the jokes,
+the interleaving of modes, etc. Do NOT change any of the output data,
+but you can add some white space to make it easier to read if you
+like.<p>
+
+</p></li><li> Format the presentation and submission of your work <i> exactly </i> as specified.
+
+</li></ul>
+
+<hr> 
+<h3> Bragging Rights: </h3>
+
+These modifications are not required, but if you complete them, let me
+know about it, and post your interesting work on the forums! Be SYRE
+to print a comment about the extra features to the console screens at
+startup time, and give clear prompting. Your JokeServer and clients
+MUST still run in the default way. Pass an additional argument to your
+programs to turn on the extra features.<p>
+
+</p><ul>
+
+<li> It is not required that your admin client have the capability to
+shut down your server, but it would be nice. Send the token "shutdown"
+from your JokeClientAdmin to shut down your server. There is a catch,
+however. Your request will be processed by an AdminWorker thread. By
+the time you get to your worker, your JokeServer main listening thread
+will be blocked waiting, and your JokeAdminServer main listening
+thread will also be blocked waiting. Neither will automatically wake
+up so that they can be shut down. Even if you change the loop control
+variable for each loop to <i>false,</i> these servers will not notice it
+until you wake them up with a request. To see a way of gracefully
+shutting down your admin server loop within the worker dialog and "reaching
+back" to kill off the parent that called the admin worker thread see the
+"HostServer" assignment. Now, how can you kill off the main Joke
+listening thread?<p>
+
+</p></li><li> Make your client and server somewhat fault-tolerant by writing the
+state to disk after each request at both the client side and the server
+side, so that if either crashes, on restart they read the state back in from
+disk before resuming operation. You will need to identify your user to the
+JokeClient in this case, and the user will need to have a unique user
+name, or be verified by a unique ID (email address?)<p>
+
+</p></li><li> Hard: Modify your client and server so that they use a secure channel for
+JokeClientAdmin via SSL.<p>
+
+</p></li><li> Hard: See the associated extra credit project for creating an
+asynchronous JokeServer Client, possibly that also connects to
+multiple JokeServers.<p>
+
+</p></li></ul>
+
+
+ 
+
+</font></font></font></body></html>
