@@ -1,0 +1,119 @@
+//The following is a compilation of logs related to the Directory Transversal and testing
+
+C:\Users\fca_m\Documents\Distributed Systems 1\MyWebserver>java MyWebServer
+Fernando Araujo's MyWebServer starting up, listening at port 2540.
+
+//Started the MyWebServer and went to the http://localhost:2540/ url
+//Showed the initial GET command which is asking for the root directory
+
+GET / HTTP/1.1
+
+Sending HTTP Directory to Server
+HTTP/1.1 200 OK
+Server: Fernando Araujo's Server
+Content-Length: 767
+Content-Type: text/html
+
+//Sent over the entire structure of the root directory
+//I also included a testSubfolder in order to caputre relevant logs
+
+<html><pre><h1>Index of MyWebserver/.</h1><br><a href="./">Root Directory</a><br>
+<a href=" http-streams.txt" > http-streams.txt </a><br>
+<a href=" ListenerWorker.class" > ListenerWorker.class </a><br>
+<a href=" MyListener.class" > MyListener.class </a><br>
+<a href=" MyListener.java" > MyListener.java </a><br>
+<a href=" MyTelnet.class" > MyTelnet.class </a><br>
+<a href=" MyTelnetClient.class" > MyTelnetClient.class </a><br>
+<a href=" MyTelnetClient.java" > MyTelnetClient.java </a><br>
+<a href=" MyWebServer.class" > MyWebServer.class </a><br>
+<a href=" MyWebServer.java" > MyWebServer.java </a><br>
+<a href=" testFolder/">\ testFolder</a><br>
+<a href=" UserData.class" > UserData.class </a><br>
+<a href=" WebWorker.class" > WebWorker.class </a><br>
+</pre></html>
+
+//clicked on the testFolder subfolder link and got the following GET command
+
+GET /testFolder/ HTTP/1.1
+
+//Sending the appropriate directory HTML back, but since the folder is empty it just has the header and Root Directory button to go back
+
+Sending HTTP Directory to Server
+HTTP/1.1 200 OK
+Server: Fernando Araujo's Server
+Content-Length: 95
+Content-Type: text/html
+
+<html><pre><h1>Index of ./testFolder</h1><br><a href="../">Root Directory</a><br>
+</pre></html>
+
+//Clicked on the Root Directory button and was able to go back to the root directory successfully
+
+GET / HTTP/1.1
+
+Sending HTTP Directory to Server
+HTTP/1.1 200 OK
+Server: Fernando Araujo's Server
+Content-Length: 767
+Content-Type: text/html
+
+<html><pre><h1>Index of MyWebserver/.</h1><br><a href="./">Root Directory</a><br>
+<a href=" http-streams.txt" > http-streams.txt </a><br>
+<a href=" ListenerWorker.class" > ListenerWorker.class </a><br>
+<a href=" MyListener.class" > MyListener.class </a><br>
+<a href=" MyListener.java" > MyListener.java </a><br>
+<a href=" MyTelnet.class" > MyTelnet.class </a><br>
+<a href=" MyTelnetClient.class" > MyTelnetClient.class </a><br>
+<a href=" MyTelnetClient.java" > MyTelnetClient.java </a><br>
+<a href=" MyWebServer.class" > MyWebServer.class </a><br>
+<a href=" MyWebServer.java" > MyWebServer.java </a><br>
+<a href=" testFolder/">\ testFolder</a><br>
+<a href=" UserData.class" > UserData.class </a><br>
+<a href=" WebWorker.class" > WebWorker.class </a><br>
+</pre></html>
+
+//Clicked on MyListener.java and was able to see the contents of the file in the browser (was not show in logs since it is too long)
+
+GET /MyListener.java HTTP/1.1
+
+Sending HTTP File to Server
+HTTP/1.1 200 OK
+Server: Fernando Araujo's Server
+Content-Length: 2572
+Content-Type: text/plain
+
+//Clicked on http-streams.txt and was able to see the contents of the file in the browser (was not show in logs since it is too long)
+
+GET /http-streams.txt HTTP/1.1
+
+Sending HTTP File to Server
+HTTP/1.1 200 OK
+Server: Fernando Araujo's Server
+Content-Length: 2443
+Content-Type: text/plain
+
+//Attempted to go three levels deep into a directory structure and the server successfully returned the HTML links for all levels
+
+GET /testFolder/ HTTP/1.1
+
+Sending HTTP Directory to Server
+HTTP/1.1 200 OK
+Server: Fernando Araujo's Server
+Content-Length: 165
+Content-Type: text/html
+
+<html><pre><h1>Index of ./testFolder</h1><br><a href="../">Root Directory</a><br>
+<a href=" ppp/">\ ppp</a><br>
+<a href=" sfff.txt" > sfff.txt </a><br>
+</pre></html>
+
+GET /testFolder/ppp/ HTTP/1.1
+
+Sending HTTP Directory to Server
+HTTP/1.1 200 OK
+Server: Fernando Araujo's Server
+Content-Length: 97
+Content-Type: text/html
+
+<html><pre><h1>Index of testFolder/ppp</h1><br><a href="../">Root Directory</a><br>
+</pre></html>
